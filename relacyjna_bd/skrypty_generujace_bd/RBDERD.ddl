@@ -1,0 +1,11 @@
+CREATE TABLE Person (personId int IDENTITY NOT NULL, name varchar(40) NOT NULL, surname varchar(40) NOT NULL, isVocalist bit NOT NULL, bandId int NOT NULL, PRIMARY KEY (personId));
+CREATE TABLE Album (albumId int IDENTITY NOT NULL, name varchar(40) NOT NULL, releasedDate date NOT NULL, bandId int NOT NULL, PRIMARY KEY (albumId));
+CREATE TABLE Track (trackId int IDENTITY NOT NULL, name varchar(40) NOT NULL, length int NOT NULL, albumId int NOT NULL, PRIMARY KEY (trackId));
+CREATE TABLE Band (bandId int IDENTITY NOT NULL, name varchar(40) NOT NULL, PRIMARY KEY (bandId));
+CREATE TABLE Instrument (instrumentId int IDENTITY NOT NULL, name varchar(40) NOT NULL, howLongPersonPlays int NOT NULL, PRIMARY KEY (instrumentId));
+CREATE TABLE PersonInstrument (personId int NOT NULL, instrumentId int NOT NULL, PRIMARY KEY (personId, instrumentId));
+ALTER TABLE Track ADD CONSTRAINT FKTrack409426 FOREIGN KEY (albumId) REFERENCES Album (albumId);
+ALTER TABLE PersonInstrument ADD CONSTRAINT FKPersonInst284169 FOREIGN KEY (personId) REFERENCES Person (personId);
+ALTER TABLE PersonInstrument ADD CONSTRAINT FKPersonInst157036 FOREIGN KEY (instrumentId) REFERENCES Instrument (instrumentId);
+ALTER TABLE Person ADD CONSTRAINT FKPerson526505 FOREIGN KEY (bandId) REFERENCES Band (bandId);
+ALTER TABLE Album ADD CONSTRAINT FKAlbum669027 FOREIGN KEY (bandId) REFERENCES Band (bandId);
