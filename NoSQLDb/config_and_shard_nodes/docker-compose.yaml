@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+
+  config_server_1:
+    container_name: config_server_1
+    image: mongo
+    command: mongod --configsvr --replSet configServerReplSet --port 27017 --dbpath /data/db
+    ports:
+      - 10001:27017
+
+  config_server_2:
+    container_name: config_server_2
+    image: mongo
+    command: mongod --configsvr --replSet configServerReplSet --port 27017 --dbpath /data/db
+    ports:
+      - 10002:27017
+
+  config_server_3:
+    container_name: config_server_3
+    image: mongo
+    command: mongod --configsvr --replSet configServerReplSet --port 27017 --dbpath /data/db
+    ports:
+      - 10003:27017
+      
+  shard1_server_1:
+    container_name: shard1_server_1
+    image: mongo
+    command: mongod --shardsvr --replSet shard1replSet --port 27017 --dbpath /data/db
+    ports:
+      - 20001:27017
+
+  shard1_server_2:
+    container_name: shard1_server_2
+    image: mongo
+    command: mongod --shardsvr --replSet shard1replSet --port 27017 --dbpath /data/db
+    ports:
+      - 20002:27017
+
+  shard1_server_3:
+    container_name: shard1_server_3
+    image: mongo
+    command: mongod --shardsvr --replSet shard1replSet --port 27017 --dbpath /data/db
+    ports:
+      - 20003:27017
+      
+  shard2_server_1:
+    container_name: shard2_server_1
+    image: mongo
+    command: mongod --shardsvr --replSet shard2replSet --port 27017 --dbpath /data/db
+    ports:
+      - 20004:27017
+
+  shard2_server_2:
+    container_name: shard2_server_2
+    image: mongo
+    command: mongod --shardsvr --replSet shard2replSet --port 27017 --dbpath /data/db
+    ports:
+      - 20005:27017
+
+  shard2_server_3:
+    container_name: shard2_server_3
+    image: mongo
+    command: mongod --shardsvr --replSet shard2replSet --port 27017 --dbpath /data/db
+    ports:
+      - 20006:27017
