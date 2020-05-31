@@ -25,6 +25,9 @@ GO
 
 SET IDENTITY_INSERT Person OFF;
 
+
+SET IDENTITY_INSERT Instrument ON;
+
 INSERT INTO [dbo].[Instrument]
            (instrumentId
 		   ,[name]
