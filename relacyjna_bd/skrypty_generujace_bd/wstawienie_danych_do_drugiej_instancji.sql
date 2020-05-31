@@ -36,7 +36,10 @@ INSERT INTO [dbo].[Instrument]
            ,30),
 		    (102
 		   ,'Pianino'
-           ,32);
+           ,32),
+		   (103
+		   ,'Gitara elektryczna'
+           ,30);
 GO
 
 SET IDENTITY_INSERT Instrument OFF;
@@ -49,9 +52,11 @@ INSERT INTO [dbo].[PersonInstrument]
            (102
            ,101),
 		   (102
-           ,102);
+           ,102)
+		   ,(102
+           ,103);
 		   
-		   SET IDENTITY_INSERT Album ON;
+SET IDENTITY_INSERT Album ON;
 
 INSERT INTO [dbo].[Album]
            (albumId
