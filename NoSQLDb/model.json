@@ -1,0 +1,39 @@
+{
+	"bands": [
+		{
+			"name": "string",
+			"members": [
+				{
+					"name": "string",
+					"surname": "string",
+					"isVocalist": "boolean",
+					"playOnInstruments": [
+						{
+							"name": "string",
+							"howLong": "int"
+						}
+					]
+				}
+			],
+			"albums": [
+				{
+					"name": "string",
+					"releaseDate": "date",
+					"tracks": [
+						{
+							"name":  "string",
+							"length": "int"
+						}
+					]
+				}
+			]
+		}
+	]
+}
+
+
+{"albums": [
+"name": "albumName1", "releaseDate": new Date(2014, 10, 11), tracks: [{"name": "track1", "length": 210}, {"name": "track2", "length": 190}],
+"name": "albumName2", "releaseDate": new Date(2016, 02, 01), tracks: [{"name": "track1", "length": 170}, {"name": "track2", "length": 150}]
+]
+}
